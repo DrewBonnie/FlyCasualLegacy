@@ -37,7 +37,6 @@ public static class Rules
     public static RemotesRule Remotes { get; private set; }
     public static FuseRule Fuse { get; private set; }
     public static PurpleManeuversRule PurpleManeuvers { get; private set; }
-    public static DiceModificationRule DiceModification { get; private set; }
 
 
     public static void Initialize()
@@ -79,7 +78,6 @@ public static class Rules
         Fuse = new FuseRule();
         Remotes = new RemotesRule();
         PurpleManeuvers = new PurpleManeuversRule();
-        DiceModification = new DiceModificationRule();
     }
 
     public static void FinishGame()
