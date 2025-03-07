@@ -61,7 +61,7 @@ namespace Abilities.SecondEdition
 
         private void RegisterAbility(GenericShip ship)
         {
-            if (HostUpgrade.State.Charges >= 2 && HostShip.Tokens.CountTokensByType<BlueTargetLockToken>() > 0)
+            if (HostUpgrade.State.Charges >= 2)
             {
                 RegisterAbilityTrigger(TriggerTypes.OnSystemsAbilityActivation, AskToUseTarkinAbility);
             }
@@ -69,14 +69,17 @@ namespace Abilities.SecondEdition
 
         private void AskToUseTarkinAbility(object sender, EventArgs e)
         {
-            AskToUseAbility(
+            if( HostShip.Tokens.CountTokensByType<BlueTargetLockToken>() > 0)
+            {
+                AskToUseAbility(
                 HostUpgrade.UpgradeInfo.Name,
-                AlwaysUseByDefault, 
+                AlwaysUseByDefault,
                 UseAbility,
-                dontUseAbility: delegate { DecisionSubPhase.ConfirmDecision(); },                
+                dontUseAbility: delegate { DecisionSubPhase.ConfirmDecision(); },
                 descriptionLong: "Do you want to spend 2 Charges? (If you do, each friendly ship may acquire a target lock on a ship that you have locked)",
                 imageHolder: HostUpgrade
-            );
+                );
+            }
         }
 
         protected void UseAbility(object sender, EventArgs e)
