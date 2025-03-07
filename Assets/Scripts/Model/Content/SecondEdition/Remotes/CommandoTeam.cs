@@ -118,8 +118,18 @@ namespace Abilities.SecondEdition
             GenericShip.OnPositionFinishGlobal += CheckRemoteOverlapping;
             GenericShip.OnRemoteWasDroppedGlobal += CheckOverlap;
             HostShip.OnAttackFinishAsAttacker += SpendCharge;
-            HostShip.OnTryDamagePrevention += RegisterConvertCritsToRegularDamage;
+            AddDiceModification(
+                HostName,
+                IsDiceModificationAvailable,
+                GetDiceModificationAiPriority,
+                DiceModificationType.Change,
+                    1,
+                    new List<DieSide>() { DieSide.Focus },
+                    DieSide.Success
+            );
         }
+
+        
 
         public override void DeactivateAbility()
         {
@@ -127,44 +137,22 @@ namespace Abilities.SecondEdition
             GenericShip.OnPositionFinishGlobal -= CheckRemoteOverlapping;
             GenericShip.OnRemoteWasDroppedGlobal -= CheckOverlap;
             HostShip.OnAttackFinishAsAttacker -= SpendCharge;
-            HostShip.OnTryDamagePrevention -= RegisterConvertCritsToRegularDamage;
+            RemoveDiceModification();
+        }
+
+        private bool IsDiceModificationAvailable()
+        {
+            return HostShip.IsAttacking && Combat.CurrentDiceRoll.Focuses != 0;
+        }
+
+        private int GetDiceModificationAiPriority()
+        {
+            return 90;
         }
 
         private void SpendCharge(GenericShip ship)
         {
             HostShip.SpendCharge();
-        }
-
-        private void RegisterConvertCritsToRegularDamage(GenericShip ship, DamageSourceEventArgs e)
-        {
-            RegisterAbilityTrigger(TriggerTypes.OnTryDamagePrevention, ConvertCritsToRegularDamage);
-        }
-
-        private void ConvertCritsToRegularDamage(object sender, EventArgs e)
-        {
-            int critsCount = HostShip.AssignedDamageDiceroll.CriticalSuccesses;
-
-            if (critsCount > 0)
-            {
-                for (int i = 0; i < critsCount; i++)
-                {
-                    HostShip.AssignedDamageDiceroll.RemoveType(DieSide.Crit);
-                    HostShip.AssignedDamageDiceroll.AddDice(DieSide.Success);
-                }
-            }
-            Triggers.FinishTrigger();
-        }
-
-        private bool anyOverlaps()
-        {
-            foreach(GenericShip ship in Roster.AllShips.Values)
-            {
-                if (ship.RemotesOverlapped.Contains((GenericRemote)HostShip))
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         private void CheckOverlap()

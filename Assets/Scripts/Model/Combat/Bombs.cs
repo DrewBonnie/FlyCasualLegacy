@@ -393,7 +393,7 @@ namespace Bombs
         {
             if (CurrentDevice != null)
             {
-                if (onlyDrop || Selection.ThisShip.GetAvailableDeviceLaunchTemplates(CurrentDevice).Count == 0)
+                if (onlyDrop || (Selection.ThisShip.GetAvailableDeviceLaunchTemplates(CurrentDevice).Count == 0 && Selection.ThisShip.GetAvailableDeviceSideDropTemplates(CurrentDevice).Count == 0))
                 {
                     DropDevice(useFrontGuides); 
                 }
@@ -420,7 +420,15 @@ namespace Bombs
             {
                 subphase.AddDecision("Drop", (o, e) => { DecisionSubPhase.ConfirmDecisionNoCallback(); DropDevice(useFrontGuides); });
             }
-            subphase.AddDecision("Launch", LaunchBomb);
+            if (Selection.ThisShip.GetAvailableDeviceLaunchTemplates(CurrentDevice).Count != 0)
+            {
+                subphase.AddDecision("Launch", LaunchBomb);
+            }
+            if (Selection.ThisShip.GetAvailableDeviceSideDropTemplates(CurrentDevice).Count != 0)
+            {
+                subphase.AddDecision("Drop from right side", (o, e) => { DecisionSubPhase.ConfirmDecisionNoCallback(); SideDrop(Direction.Right, useFrontGuides); });
+                subphase.AddDecision("Drop from left side", (o, e) => { DecisionSubPhase.ConfirmDecisionNoCallback(); SideDrop(Direction.Left, useFrontGuides); });
+            }
 
             subphase.DescriptionShort = "Select a way how to use the device";
             subphase.DefaultDecisionName = "Drop";
@@ -451,6 +459,18 @@ namespace Bombs
                 IsOverriden = false;
                 Selection.ThisShip.CallDeviceWasDropped(Triggers.FinishTrigger);
             }
+        }
+
+        private static void SideDrop(Direction dropDirection, bool useFrontGuides = false)
+        {
+            BombSideDropPlanningSubPhase bombSideDropPlanningSubPhase = (BombSideDropPlanningSubPhase)Phases.StartTemporarySubPhaseNew(
+                "Device side drop planning",
+                typeof(BombSideDropPlanningSubPhase),
+                delegate { Selection.ThisShip.CallDeviceWasDropped(Triggers.FinishTrigger); }
+            );
+            bombSideDropPlanningSubPhase.useFrontGuides = useFrontGuides;
+            bombSideDropPlanningSubPhase.dropDirection = dropDirection;
+            bombSideDropPlanningSubPhase.Start();
         }
 
         private static void LaunchBomb(object sender, System.EventArgs e)

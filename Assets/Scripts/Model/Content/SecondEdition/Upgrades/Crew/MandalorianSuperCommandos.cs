@@ -98,7 +98,7 @@ namespace Abilities.SecondEdition
                 delegate { }
             );
 
-            templateDecisionSubphase.DescriptionShort = "Select template";
+            templateDecisionSubphase.DescriptionShort = "Place Commandos using Front Guides or Rear Guides";
             templateDecisionSubphase.DecisionOwner = HostShip.Owner;
 
             templateDecisionSubphase.ShowSkipButton = false;
