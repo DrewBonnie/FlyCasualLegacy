@@ -16,7 +16,7 @@ using Obstacles;
 public partial class MainMenu : MonoBehaviour {
 
     string NewVersionUrl;
-    const string PatreonUrl = "https://www.patreon.com/Sandrem";
+    const string PatreonUrl = "https://www.patreon.com/c/user?u=84527220";
 
     public static MainMenu CurrentMainMenu;
 
