@@ -113,6 +113,7 @@ namespace Conditions
             Host.OnCheckIsFriendly += TreatAsAllied;
             Host.OnAttackStartAsAttacker += CheckAlliedStress;
             GenericShip.OnFaceupCritCardReadyToBeDealtGlobal += CheckRemoveBrokenTrust;
+            Host.OnAttackFinish += CheckRemoveBrokenTrust;
         }
 
 
@@ -121,6 +122,15 @@ namespace Conditions
             Host.OnCheckIsFriendly -= TreatAsAllied;
             Host.OnAttackStartAsAttacker -= CheckAlliedStress;
             GenericShip.OnFaceupCritCardReadyToBeDealtGlobal -= CheckRemoveBrokenTrust;
+            Host.OnAttackFinish -= CheckRemoveBrokenTrust;
+        }
+
+        public void CheckRemoveBrokenTrust(GenericShip ship)
+        {
+            if (Combat.Defender != null && Combat.Defender.IsDestroyed)
+            {
+                RemoveBrokenTrust(Host);
+            }
         }
 
         private void CheckRemoveBrokenTrust(GenericShip ship, GenericDamageCard crit, EventArgs e)
