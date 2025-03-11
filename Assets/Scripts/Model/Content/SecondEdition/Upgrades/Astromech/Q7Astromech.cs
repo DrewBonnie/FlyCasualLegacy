@@ -5,7 +5,7 @@ using System;
 
 namespace UpgradesList.SecondEdition
 {
-    public class Q7Astromech : GenericUpgrade
+    public class Q7Astromech : GenericUpgrade, IVariableCost
     {
         public Q7Astromech() : base()
         {

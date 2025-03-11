@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace UpgradesList.SecondEdition
 {
-    public class PloKoon : GenericUpgrade
+    public class PloKoon : GenericUpgrade, IVariableCost
     {
         public PloKoon() : base()
         {

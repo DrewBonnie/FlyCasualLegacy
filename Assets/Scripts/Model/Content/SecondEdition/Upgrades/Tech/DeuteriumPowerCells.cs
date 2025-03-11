@@ -7,7 +7,7 @@ using Upgrade;
 
 namespace UpgradesList.SecondEdition
 {
-    public class DeuteriumPowerCells : GenericUpgrade
+    public class DeuteriumPowerCells : GenericUpgrade, IVariableCost
     {
         public DeuteriumPowerCells() : base()
         {

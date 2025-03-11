@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace UpgradesList.SecondEdition
 {
-    public class R5D8 : GenericUpgrade
+    public class R5D8 : GenericUpgrade, IVariableCost
     {
         public R5D8() : base()
         {

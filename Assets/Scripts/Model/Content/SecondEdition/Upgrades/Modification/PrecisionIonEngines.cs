@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 namespace UpgradesList.SecondEdition
 {
-    public class PrecisionIonEngines : GenericUpgrade
+    public class PrecisionIonEngines : GenericUpgrade, IVariableCost
     {
         public PrecisionIonEngines() : base()
         {
