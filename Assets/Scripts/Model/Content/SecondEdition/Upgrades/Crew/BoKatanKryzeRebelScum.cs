@@ -46,6 +46,9 @@ namespace Abilities.SecondEdition
 
         private void CheckAbility(GenericShip ship, bool flag)
         {
+            if (!(Phases.CurrentPhase is MainPhases.CombatPhase))
+                return;
+
             if (Tools.IsSameShip(ship, Combat.Defender)
                 && Tools.IsSameShip(HostShip, Combat.Attacker))
             {
