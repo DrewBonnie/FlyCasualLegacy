@@ -36,12 +36,12 @@ namespace Abilities.SecondEdition
     {
         public override void ActivateAbility()
         {
-            HostShip.OnMovementExecuted += CheckAbility;   
+            HostShip.OnMovementFinishSuccessfully += CheckAbility;   
         }
 
         public override void DeactivateAbility()
         {
-            HostShip.OnMovementExecuted -= CheckAbility;
+            HostShip.OnMovementFinishSuccessfully -= CheckAbility;
         }
 
         private void CheckAbility(GenericShip ship)
