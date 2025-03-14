@@ -836,12 +836,13 @@ namespace Ship
         public List<ManeuverTemplate> GetAvailableDeviceSideDropTemplates(GenericUpgrade upgrade)
         {
             List<ManeuverTemplate> availableTemplates = new List<ManeuverTemplate>();
-
             OnGetGetAvailableDeviceSideDropTemplates?.Invoke(availableTemplates, upgrade);
-            OnGetAvailableBombDropTemplatesNoConditions?.Invoke(availableTemplates, upgrade);
-            OnGetAvailableBombDropTemplatesTwoConditions?.Invoke(availableTemplates, upgrade);
-            OnGetAvailableBombDropTemplatesOneCondition?.Invoke(availableTemplates, upgrade);
-
+            if(availableTemplates.Count > 0)
+            {
+                OnGetAvailableBombDropTemplatesNoConditions?.Invoke(availableTemplates, upgrade);
+                OnGetAvailableBombDropTemplatesTwoConditions?.Invoke(availableTemplates, upgrade);
+                OnGetAvailableBombDropTemplatesOneCondition?.Invoke(availableTemplates, upgrade);
+            }
             return availableTemplates;
         }
 
