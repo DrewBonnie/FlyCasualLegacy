@@ -139,7 +139,7 @@ namespace Abilities.SecondEdition
 
             private List<GenericAction> GetPossibleActions()
             {
-                return Selection.ThisShip.GetAvailableActions();
+                return Selection.ThisShip.GetAvailableActions().Select(n => n.AsCoordinatedAction).ToList();
             }
 
             private bool FilterCoordinateTargets(GenericShip ship)
