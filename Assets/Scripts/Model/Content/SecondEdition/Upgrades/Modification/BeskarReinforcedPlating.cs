@@ -67,6 +67,7 @@ namespace Abilities.SecondEdition
 
         private bool IsFaceToFaceDefense()
         {
+            if (!(Phases.CurrentPhase is MainPhases.CombatPhase)) return false;
             if (!Tools.IsSameShip(HostShip, Combat.Defender)) return false;
             if (Combat.Attacker == null) return false;
             if (Combat.Defender == null) return false;
