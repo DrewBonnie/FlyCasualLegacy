@@ -101,7 +101,7 @@ namespace Ship.SecondEdition.TIESeBomber
                 "TIE-Fire", 2
             );
 
-            ShipIconLetter = ' '; //TODO
+            ShipIconLetter = '!';
         }
     }
 }

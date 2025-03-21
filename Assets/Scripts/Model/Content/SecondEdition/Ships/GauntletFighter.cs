@@ -96,6 +96,8 @@ namespace Ship
                     },
                     "Slave1-Fire", 3
                 );
+
+                ShipIconLetter = '6';
             }
         }
     }

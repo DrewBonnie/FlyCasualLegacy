@@ -78,7 +78,7 @@ namespace Ship.SecondEdition.CloneZ95Headhunter
                 "XWing-Laser", 2
             );
 
-            ShipIconLetter = 'z';
+            ShipIconLetter = '}';
 
             ShipAbilities.Add(new Abilities.SecondEdition.VersatileFrameAbility());
         }

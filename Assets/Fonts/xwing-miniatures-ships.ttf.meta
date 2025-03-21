@@ -8,9 +8,8 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: x-wing-ships
   fontNames:
-  - x-wing-ships
+  - My Font
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

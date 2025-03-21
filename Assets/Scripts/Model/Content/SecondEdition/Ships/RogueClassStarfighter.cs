@@ -93,7 +93,7 @@ namespace Ship
                     "XWing-Laser", 2
                 );
 
-                ShipIconLetter = '?';
+                ShipIconLetter = '|';
 
                 ShipAbilities.Add(new Abilities.SecondEdition.DeadToRights());
             }
