@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Obstacles;
 
 namespace SubPhases
 {
@@ -89,6 +90,18 @@ namespace SubPhases
             }
         }
 
+        private void SyncCollisions(TallonRollHelper tallonRollHelper, int direction)
+        {
+            List<GenericObstacle> templateObstacles = Selection.ThisShip.AssignedManeuver.movementPrediction.AsteroidsHitTemplateOnly;
+            List<GenericObstacle> landedObstacles = Selection.ThisShip.AssignedManeuver.movementPrediction.LandedOnObstacles;
+            Selection.ThisShip.ObstaclesLanded = new List<GenericObstacle>(tallonRollHelper.OverlappedObstacles[direction]);
+            Selection.ThisShip.ObstaclesHit = templateObstacles;
+            tallonRollHelper.OverlappedObstacles[direction]
+                  .Where((a) => !Selection.ThisShip.ObstaclesHit.Contains(a)).ToList()
+                .ForEach(Selection.ThisShip.ObstaclesHit.Add);
+        }
+
+
         private void FinishTallonRoll()
         {
             DecisionSubPhase.ConfirmDecision();
@@ -104,6 +117,7 @@ namespace SubPhases
 
             if (tallonRollHelper.IsPositionAllowed[direction])
             {
+                SyncCollisions(tallonRollHelper, direction);
                 UI.ShowNextButton();
             }
             else
@@ -150,6 +164,7 @@ public class TallonRollHelper
 
     private Dictionary<int, GameObject> TemporaryShipBases;
     public Dictionary<int, bool> IsPositionAllowed { get; private set; }
+    public Dictionary<int, List<GenericObstacle>> OverlappedObstacles { get; private set; }
 
     public TallonRollHelper(GenericShip ship)
     {
@@ -211,12 +226,14 @@ public class TallonRollHelper
     private void ProcessResults()
     {
         IsPositionAllowed = new Dictionary<int, bool>();
+        OverlappedObstacles = new Dictionary<int, List<GenericObstacle>>();
 
         for (int i = -1; i < 2; i++)
         {
             List<GenericShip> overlappedShips = TemporaryShipBases[i].GetComponentInChildren<ObstaclesStayDetectorForced>().OverlappedShipsNow;
             bool isPositionAllowed = !overlappedShips.Where(n => n.ShipId != Ship.ShipId).Any();
             IsPositionAllowed.Add(i, isPositionAllowed);
+            OverlappedObstacles.Add(i, TemporaryShipBases[i].GetComponentInChildren<ObstaclesStayDetectorForced>().OverlappedAsteroidsNow);
         }
     }
 

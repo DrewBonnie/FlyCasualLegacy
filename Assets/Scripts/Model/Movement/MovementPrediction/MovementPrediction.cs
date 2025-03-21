@@ -29,6 +29,7 @@ namespace Movement
         public List<GenericRemote> RemotesOverlapped = new List<GenericRemote>();
         public List<GenericRemote> RemotesMovedThrough = new List<GenericRemote>();
         public List<GenericShip> ShipsMovedThrough = new List<GenericShip>();
+        public List<GenericObstacle> AsteroidsHitTemplateOnly = new List<GenericObstacle>();
         public List<GenericObstacle> AsteroidsHit = new List<GenericObstacle>();
         public List<GenericDeviceGameObject> MinesHit = new List<GenericDeviceGameObject>();
         public bool IsLandedOnAsteroid { get { return LandedOnObstacles.Count > 0; } }
@@ -226,6 +227,11 @@ namespace Movement
         {
             foreach (GenericObstacle asteroidHit in obstacleHitsDetector.OverlapedAsteroids)
             {
+                if (!AsteroidsHitTemplateOnly.Contains(asteroidHit))
+                {
+                    AsteroidsHitTemplateOnly.Add(asteroidHit);
+                }
+
                 if (!AsteroidsHit.Contains(asteroidHit))
                 {
                     AsteroidsHit.Add(asteroidHit);
