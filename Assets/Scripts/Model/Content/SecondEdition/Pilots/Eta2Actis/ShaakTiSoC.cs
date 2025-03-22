@@ -31,11 +31,9 @@ namespace Ship.SecondEdition.Eta2Actis
                 },
                 extraUpgradeIcon: UpgradeType.Talent
             );
-            PilotNameCanonical = "shaakti-siegeofcoruscant";
+            PilotNameCanonical = "shaakti-siegeofcoruscant-lsl";
 
             ModelInfo.SkinName = "Red";
-
-            ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/SiegeOfCoruscant/shaakti-soc.png";
         }
     }
 }

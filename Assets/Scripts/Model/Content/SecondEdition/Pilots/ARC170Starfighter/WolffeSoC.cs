@@ -29,11 +29,9 @@ namespace Ship
                 );
                 ShipAbilities.Add(new Abilities.SecondEdition.BornForThisAbility());
 
-                PilotNameCanonical = "wolffe-siegeofcoruscant";
+                PilotNameCanonical = "wolffe-siegeofcoruscant-lsl";
 
                 ModelInfo.SkinName = "Wolffe";
-
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/SiegeOfCoruscant/wolffe-soc.png";
             }
         }
     }

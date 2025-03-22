@@ -27,9 +27,7 @@ namespace Ship
 
                 ShipInfo.Tags.Remove(Tags.Tie);
 
-                PilotNameCanonical = "contrail-siegeofcoruscant";
-
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/SiegeOfCoruscant/contrail-soc.png";
+                PilotNameCanonical = "contrail-siegeofcoruscant-lsl";
             }
         }
     }

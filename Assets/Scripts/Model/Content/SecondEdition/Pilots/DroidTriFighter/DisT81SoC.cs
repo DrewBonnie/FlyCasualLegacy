@@ -27,9 +27,7 @@ namespace Ship.SecondEdition.DroidTriFighter
                 }
             );
 
-            PilotNameCanonical = "dist81-siegeofcoruscant";
-
-            ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/SiegeOfCoruscant/dist81-soc.png";
+            PilotNameCanonical = "dist81-siegeofcoruscant-lsl";
         }
     }
 }

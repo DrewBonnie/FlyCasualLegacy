@@ -28,9 +28,7 @@ namespace Ship.SecondEdition.V19TorrentStarfighter
             ShipInfo.UpgradeIcons.Upgrades.Remove(UpgradeType.Modification);
             ShipAbilities.Add(new Abilities.SecondEdition.BornForThisAbility());
 
-            PilotNameCanonical = "kickback-siegeofcoruscant";
-
-            ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/SiegeOfCoruscant/kickback-soc.png";
+            PilotNameCanonical = "kickback-siegeofcoruscant-lsl";
         }
     }
 }

@@ -36,11 +36,9 @@ namespace Ship
                 ShipInfo.UpgradeIcons.Upgrades.Remove(UpgradeType.Modification);
                 ShipAbilities.Add(new Abilities.SecondEdition.BornForThisAbility());
 
-                PilotNameCanonical = "oddball-siegeofcoruscant";
+                PilotNameCanonical = "oddball-siegeofcoruscant-lsl";
 
                 ModelInfo.SkinName = "Red";
-
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/SiegeOfCoruscant/oddball-soc.png";
             }
         }
     }

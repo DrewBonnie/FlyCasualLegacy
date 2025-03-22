@@ -25,11 +25,9 @@ namespace Ship
                 );
                 ShipAbilities.Add(new Abilities.SecondEdition.BornForThisAbility());
 
-                PilotNameCanonical = "jag-siegeofcoruscant";
+                PilotNameCanonical = "jag-siegeofcoruscant-lsl";
 
                 ModelInfo.SkinName = "Red";
-
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/SiegeOfCoruscant/jag-soc.png";
             }
         }
     }
