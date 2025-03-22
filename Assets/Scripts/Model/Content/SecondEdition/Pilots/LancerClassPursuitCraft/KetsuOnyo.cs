@@ -1,4 +1,6 @@
 ﻿using Upgrade;
+using Content;
+using System.Collections.Generic;
 
 namespace Ship
 {
@@ -14,6 +16,11 @@ namespace Ship
                     66,
                     isLimited: true,
                     abilityType: typeof(Abilities.FirstEdition.KetsuOnyoPilotAbility),
+                    tags: new List<Tags>
+                    {
+                        Tags.Mandalorian,
+                        Tags.BountyHunter
+                    },
                     extraUpgradeIcon: UpgradeType.Talent
                 );
             }
