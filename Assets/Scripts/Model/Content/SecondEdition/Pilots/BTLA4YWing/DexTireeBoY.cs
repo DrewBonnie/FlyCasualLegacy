@@ -25,8 +25,7 @@ namespace Ship
                     extraUpgradeIcon: UpgradeType.Modification
                 );
                 ShipAbilities.Add(new HopeAbility());
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/dextiree-boy.png";
-                PilotNameCanonical = "dextiree-battleofyavin";
+                PilotNameCanonical = "dextiree-battleofyavin-lsl";
             }
         }
     }

@@ -25,8 +25,7 @@ namespace Ship
                     abilityType: typeof(Abilities.SecondEdition.BiggsDarklighterBoYAbility)
                 );
                 ShipAbilities.Add(new HopeAbility());
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/biggsdarklighter-boy.png";
-                PilotNameCanonical = "biggsdarklighter-battleofyavin";
+                PilotNameCanonical = "biggsdarklighter-battleofyavin-lsl";
                 ModelInfo.SkinName = "Biggs Darklighter";
             }
         }

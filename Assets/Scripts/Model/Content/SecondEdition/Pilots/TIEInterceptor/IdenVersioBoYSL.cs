@@ -42,8 +42,7 @@ namespace Ship
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.Predator));
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.Fanatic));
 
-                PilotNameCanonical = "idenversio-battleofyavin-sl";
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/7/76/Idenversio-battleofyavin.png";
+                PilotNameCanonical = "idenversio-battleofyavin";
             }
         }
     }

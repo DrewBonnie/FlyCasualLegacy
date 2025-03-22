@@ -25,12 +25,10 @@ namespace Ship
                     abilityType: typeof(Abilities.SecondEdition.DarkCurseAbility)
                 );
 
-                PilotNameCanonical = "darkcurse-battleofyavin";
+                PilotNameCanonical = "darkcurse-battleofyavin-lsl";
 
                 ShipInfo.Hull++;
                 ShipInfo.UpgradeIcons.Upgrades.Remove(UpgradeType.Modification);
-
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/darkcurse-boy.png";
             }
         }
     }

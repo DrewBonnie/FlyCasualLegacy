@@ -35,7 +35,7 @@ namespace Ship
                     isStandardLayout: true
                 );
 
-                PilotNameCanonical = "sigma6-battleofyavin-sl";
+                PilotNameCanonical = "sigma6-battleofyavin";
 
                 ShipInfo.Hull++;
                 AutoThrustersAbility oldAbility = (AutoThrustersAbility)ShipAbilities.First(n => n.GetType() == typeof(AutoThrustersAbility));
@@ -44,8 +44,6 @@ namespace Ship
 
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.Daredevil));
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.AfterBurners));
-
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/3/3f/Sigma6-battleofyavin.png";
             }
         }
     }

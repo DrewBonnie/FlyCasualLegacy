@@ -22,8 +22,7 @@ namespace Ship
                     abilityType: typeof(JekPorkinsAbility)
                 );
                 ShipAbilities.Add(new HopeAbility());
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/jekporkins-boy.png";
-                PilotNameCanonical = "jekporkins-battleofyavin";
+                PilotNameCanonical = "jekporkins-battleofyavin-lsl";
                 ModelInfo.SkinName = "Jek Porkins";
             }
         }

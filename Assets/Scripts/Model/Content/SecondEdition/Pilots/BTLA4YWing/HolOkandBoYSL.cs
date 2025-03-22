@@ -44,8 +44,7 @@ namespace Ship
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.AdvProtonTorpedoes));
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.PreciseAstromech));
 
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/a/a4/Holokand-battleofyavin.png";
-                PilotNameCanonical = "holokand-battleofyavin-sl";
+                PilotNameCanonical = "holokand-battleofyavin";
             }
         }
     }

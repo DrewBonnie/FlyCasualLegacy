@@ -30,11 +30,9 @@ namespace Ship
                     isStandardLayout:true
                 );
 
-                PilotNameCanonical = "darkcurse-battleofyavin-SL";
+                PilotNameCanonical = "darkcurse-battleofyavin";
 
                 ShipInfo.Hull++;
-
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/9/90/Darkcurse-battleofyavin.png";
 
                 MustHaveUpgrades.Add(typeof(Ruthless));
                 MustHaveUpgrades.Add(typeof(PrecisionIonEngines));

@@ -36,8 +36,7 @@ namespace Ship
                     isStandardLayout: true
                 );
                 ShipInfo.Shields++;
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/a/a9/Darthvader-battleofyavin.png";
-                PilotNameCanonical = "darthvader-battleofyavin-sl";
+                PilotNameCanonical = "darthvader-battleofyavin";
                 ModelInfo.SkinName = "Blue";
 
                 MustHaveUpgrades.Add(typeof(Marksmanship));

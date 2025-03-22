@@ -33,8 +33,7 @@ namespace Ship
                     extraUpgradeIcon: UpgradeType.ForcePower
                 );
                 ShipAbilities.Add(new HopeAbility());
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/lukeskywalker-boy.png";
-                PilotNameCanonical = "lukeskywalker-battleofyavin";
+                PilotNameCanonical = "lukeskywalker-battleofyavin-lsl";
                 ModelInfo.SkinName = "Luke Skywalker";
             }
         }

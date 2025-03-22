@@ -30,7 +30,7 @@ namespace Ship
                     extraUpgradeIcon: UpgradeType.Talent
                 );
 
-                PilotNameCanonical = "sigma5-battleofyavin";
+                PilotNameCanonical = "sigma5-battleofyavin-lsl";
 
                 ShipInfo.Hull++;
                 ShipInfo.UpgradeIcons.Upgrades.Remove(UpgradeType.Modification);
@@ -38,7 +38,6 @@ namespace Ship
                 AutoThrustersAbility oldAbility = (AutoThrustersAbility)ShipAbilities.First(n => n.GetType() == typeof(AutoThrustersAbility));
                 ShipAbilities.Remove(oldAbility);
                 ShipAbilities.Add(new SensitiveControlsRealAbility());
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/sigma5-boy.png";
             }
         }
     }

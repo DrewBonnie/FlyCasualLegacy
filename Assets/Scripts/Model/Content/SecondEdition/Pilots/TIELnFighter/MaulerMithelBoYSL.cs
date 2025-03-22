@@ -30,8 +30,7 @@ namespace Ship
                     isStandardLayout: true
                 );
                 ShipInfo.Hull++;
-                PilotNameCanonical = "maulermithel-battleofyavin-sl";
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/4/41/Maulermithel-battleofyavin.png";
+                PilotNameCanonical = "maulermithel-battleofyavin";
 
                 MustHaveUpgrades.Add(typeof(Predator));
                 MustHaveUpgrades.Add(typeof(AfterBurners));

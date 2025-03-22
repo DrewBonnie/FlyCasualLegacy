@@ -35,8 +35,7 @@ namespace Ship
                 );
                 ShipInfo.ActionIcons.AddActions(new ActionInfo(typeof(TargetLockAction)));
                 ShipInfo.Hull++;
-                PilotNameCanonical = "wampa-battleofyavin-sl";
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/0/0c/Wampa-battleofyavin.png";
+                PilotNameCanonical = "wampa-battleofyavin";
 
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.Elusive));
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.Vengeful));

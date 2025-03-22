@@ -36,8 +36,7 @@ namespace Ship
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.R5D8BoY));
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.UnstableSublightEngines));
 
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/1/1b/Jekporkins-battleofyavin.png";
-                PilotNameCanonical = "jekporkins-battleofyavin-sl";
+                PilotNameCanonical = "jekporkins-battleofyavin";
                 ModelInfo.SkinName = "Jek Porkins";
             }
         }

@@ -26,8 +26,7 @@ namespace Ship
                     },
                     extraUpgradeIcon: UpgradeType.Talent
                 );
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/hansolo-boy.png";
-                PilotNameCanonical = "hansolo-battleofyavin";
+                PilotNameCanonical = "hansolo-battleofyavin-lsl";
             }
         }
     }

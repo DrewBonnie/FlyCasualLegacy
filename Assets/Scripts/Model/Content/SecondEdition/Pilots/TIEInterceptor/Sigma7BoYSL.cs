@@ -37,7 +37,7 @@ namespace Ship
                     isStandardLayout: true
                 );
 
-                PilotNameCanonical = "sigma7-battleofyavin-sl";
+                PilotNameCanonical = "sigma7-battleofyavin";
 
                 ShipInfo.ActionIcons.AddActions(new ActionInfo(typeof(TargetLockAction)));
                 ShipInfo.Hull++;
@@ -47,8 +47,6 @@ namespace Ship
 
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.Marksmanship));
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.FireControlSystem));
-
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/b/bc/Sigma7-battleofyavin.png";
             }
         }
     }

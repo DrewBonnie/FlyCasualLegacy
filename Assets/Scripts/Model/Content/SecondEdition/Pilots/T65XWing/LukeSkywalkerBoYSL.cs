@@ -47,8 +47,7 @@ namespace Ship
                 MustHaveUpgrades.Add(typeof(ProtonTorpedoes));
                 MustHaveUpgrades.Add(typeof(R2D2BoY));
 
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/6/61/Lukeskywalker-battleofyavin.png";
-                PilotNameCanonical = "lukeskywalker-battleofyavin-sl";
+                PilotNameCanonical = "lukeskywalker-battleofyavin";
                 ModelInfo.SkinName = "Luke Skywalker";
             }
         }

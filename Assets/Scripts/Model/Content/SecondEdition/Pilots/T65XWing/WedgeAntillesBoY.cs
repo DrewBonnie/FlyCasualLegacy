@@ -24,8 +24,7 @@ namespace Ship
                     abilityType: typeof(Abilities.SecondEdition.WedgeAntillesBoYAbility)
                 );
                 ShipAbilities.Add(new HopeAbility());
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/wedgeantilles-boy.png";
-                PilotNameCanonical = "wedgeantilles-battleofyavin";
+                PilotNameCanonical = "wedgeantilles-battleofyavin-lsl";
                 ModelInfo.SkinName = "Wedge Antilles";
             }
         }

@@ -43,8 +43,7 @@ namespace Ship
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.AdvProtonTorpedoes));
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.TargetingAstromech));
 
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/d/d4/Dutchvander-battleofyavin.png";
-                PilotNameCanonical = "dutchvander-battleofyavin-sl";
+                PilotNameCanonical = "dutchvander-battleofyavin";
             }
         }
     }

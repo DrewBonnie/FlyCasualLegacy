@@ -22,8 +22,7 @@ namespace Ship
                     abilityType: typeof(GarvenDreisAbility)
                 );
                 ShipAbilities.Add(new Abilities.SecondEdition.HopeAbility());
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/garvendreis-boy.png";
-                PilotNameCanonical = "garvendreis-battleofyavin";
+                PilotNameCanonical = "garvendreis-battleofyavin-lsl";
             }
         }
     }

@@ -39,9 +39,7 @@ namespace Ship
                 MustHaveUpgrades.Add(typeof(MillenniumFalcon));
                 MustHaveUpgrades.Add(typeof(L337sProgramming));
 
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/5/5e/Hansolo-battleofyavin.png";
-
-                PilotNameCanonical = "hansolo-battleofyavin-sl";
+                PilotNameCanonical = "hansolo-battleofyavin";
             }
         }
     }

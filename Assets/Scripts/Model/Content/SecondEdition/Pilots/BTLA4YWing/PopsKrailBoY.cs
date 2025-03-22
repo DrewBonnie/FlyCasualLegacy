@@ -32,8 +32,7 @@ namespace Ship
                     extraUpgradeIcons: new List<UpgradeType>() { UpgradeType.Modification }
                 );
                 ShipAbilities.Add(new HopeAbility());
-                ImageUrl = "https://raw.githubusercontent.com/sampson-matt/FlyCasualLegacyCustomCards/main/BattleOfYavin/popskrail-boy.png";
-                PilotNameCanonical = "popskrail-battleofyavin";
+                PilotNameCanonical = "popskrail-battleofyavin-lsl";
             }
         }
     }

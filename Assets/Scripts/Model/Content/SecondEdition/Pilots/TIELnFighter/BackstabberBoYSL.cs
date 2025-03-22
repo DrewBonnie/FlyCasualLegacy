@@ -31,10 +31,9 @@ namespace Ship
                     isStandardLayout: true
                 );
 
-                PilotNameCanonical = "backstabber-battleofyavin-sl";
+                PilotNameCanonical = "backstabber-battleofyavin";
 
                 ShipInfo.Hull++;
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/3/33/Backstabber-battleofyavin.png";
 
                 MustHaveUpgrades.Add(typeof(CrackShot));
                 MustHaveUpgrades.Add(typeof(Disciplined));

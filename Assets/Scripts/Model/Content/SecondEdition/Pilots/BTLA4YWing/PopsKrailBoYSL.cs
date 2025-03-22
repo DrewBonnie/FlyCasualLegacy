@@ -47,8 +47,7 @@ namespace Ship
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.AdvProtonTorpedoes));
                 MustHaveUpgrades.Add(typeof(UpgradesList.SecondEdition.R4Astromech));
 
-                ImageUrl = "https://static.wikia.nocookie.net/xwing-miniatures-second-edition/images/9/9b/Popskrail-battleofyavin.png";
-                PilotNameCanonical = "popskrail-battleofyavin-sl";
+                PilotNameCanonical = "popskrail-battleofyavin";
             }
         }
     }
