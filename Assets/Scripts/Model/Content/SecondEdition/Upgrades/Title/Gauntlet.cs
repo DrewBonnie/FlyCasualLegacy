@@ -19,6 +19,7 @@ namespace UpgradesList.SecondEdition
                 types: new List<UpgradeType>()
                 {
                     UpgradeType.Title,
+                    UpgradeType.Modification
                 },
                 cost: 3,
                 charges: 2,
