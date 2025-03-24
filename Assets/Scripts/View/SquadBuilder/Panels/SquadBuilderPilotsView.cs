@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace SquadBuilderNS
 {
     public class SquadBuilderPilotsView
     {
         private float FromLeft = 0;
+        private List<PilotRecord> AvailablePilots;
 
         public void ShowAvailablePilots(Faction faction, string shipName, Boolean isCampaign = false)
         {
@@ -17,11 +19,11 @@ namespace SquadBuilderNS
 
             ShipRecord shipRecord = Global.SquadBuilder.Database.AllShips.Find(n => n.ShipName == shipName);
 
-            List<PilotRecord> AllPilotsFiltered = new List<PilotRecord>();
+            AvailablePilots = new List<PilotRecord>();
 
             if (isCampaign)
             {
-                AllPilotsFiltered = Global.SquadBuilder.Database.AllPilots
+                AvailablePilots = Global.SquadBuilder.Database.AllPilots
                 .Where(n =>
                     n.Ship == shipRecord
                     && n.PilotFaction == faction
@@ -35,7 +37,7 @@ namespace SquadBuilderNS
             }
             else
             {
-                AllPilotsFiltered = Global.SquadBuilder.Database.AllPilots
+                AvailablePilots = Global.SquadBuilder.Database.AllPilots
                 .Where(n =>
                     n.Ship == shipRecord
                     && n.PilotFaction == faction
@@ -46,20 +48,51 @@ namespace SquadBuilderNS
                 OrderByDescending(n => n.Tags.Contains(Content.Tags.BoY) || n.Tags.Contains(Content.Tags.SoC) ? 0 : 1).
                 ToList();
             }
-            
-            int pilotsCount = AllPilotsFiltered.Count();
+
+            //Clear search text
+            GameObject.Find("UI/Panels/SelectPilotPanel/TopPanel/InputField").GetComponent<InputField>().text = "";
 
             Transform contentTransform = GameObject.Find("UI/Panels/SelectPilotPanel/Panel/Scroll View/Viewport/Content").transform;
             SquadBuilderView.DestroyChildren(contentTransform);
             contentTransform.localPosition = new Vector3(0, contentTransform.localPosition.y, contentTransform.localPosition.z);
 
             FromLeft = 25f;
-            foreach (PilotRecord pilot in AllPilotsFiltered)
+            foreach (PilotRecord pilot in AvailablePilots)
             {
                 ShowAvailablePilot(pilot);
             }
 
             contentTransform.GetComponent<RectTransform>().sizeDelta = new Vector2(FromLeft+300, 0);
+        }
+
+        public void FilterVisiblePilots(string text)
+        {
+            List<PilotRecord> AvailablePilotsFiltered = new List<PilotRecord>();
+            foreach (PilotRecord pilot in AvailablePilots)
+            {
+                if (text == "")
+                {
+                    AvailablePilotsFiltered.Add(pilot);
+                }
+                else
+                {
+                    if (pilot.PilotName.ToLower().Contains(text))
+                    {
+                        AvailablePilotsFiltered.Add(pilot);
+                    }
+                }
+            }
+
+            Transform contentTransform = GameObject.Find("UI/Panels/SelectPilotPanel/Panel/Scroll View/Viewport/Content").transform;
+            SquadBuilderView.DestroyChildren(contentTransform);
+            contentTransform.localPosition = new Vector3(0, contentTransform.localPosition.y, contentTransform.localPosition.z);
+            FromLeft = 25f;
+            foreach (PilotRecord pilot in AvailablePilotsFiltered)
+            {
+                ShowAvailablePilot(pilot);
+            }
+
+            contentTransform.GetComponent<RectTransform>().sizeDelta = new Vector2(FromLeft + 300, 0);
         }
 
         private void ShowAvailablePilot(PilotRecord pilotRecord)
@@ -82,6 +115,7 @@ namespace SquadBuilderNS
 
             PilotPanelSquadBuilder script = newPilotPanel.GetComponent<PilotPanelSquadBuilder>();
             script.Initialize(newShip, PilotSelectedIsClicked, true);
+            newPilotPanel.name = pilotRecord.PilotName;
         }
 
         public void PilotSelectedIsClicked(GenericShip ship)

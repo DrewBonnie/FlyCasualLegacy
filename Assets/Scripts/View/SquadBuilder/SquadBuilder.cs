@@ -160,6 +160,11 @@ namespace SquadBuilderNS
             UpgradesView.FilterVisibleUpgrades(text);
         }
 
+        public void FilterVisiblePilots(string text)
+        {
+            PilotsView.FilterVisiblePilots(text);
+        }
+
         public void SetDefaultObstacles()
         {
             ObstaclesView.SetDefaultObstacles();

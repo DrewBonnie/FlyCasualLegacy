@@ -175,6 +175,11 @@ public class RosterBuilderUI : MonoBehaviour {
         Global.SquadBuilder.View.FilterVisibleUpgrades(input.text.ToLower());
     }
 
+    public void OnPilotFilterTextChanged(InputField input)
+    {
+        Global.SquadBuilder.View.FilterVisiblePilots(input.text.ToLower());
+    }
+
     public void ConfirmGoBack()
     {
         GameObject.Find("UI").transform.Find("ConfirmGoBack").gameObject.SetActive(false);
