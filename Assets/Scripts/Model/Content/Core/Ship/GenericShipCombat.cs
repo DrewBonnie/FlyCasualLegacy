@@ -136,7 +136,7 @@ namespace Ship
         public event EventHandlerBombDropTemplates OnGetAvailableBombDropTemplatesForbid;
         public event EventHandlerBombDropTemplates OnGetAvailableBombLaunchTemplates;
         public event EventHandlerBombDropTemplates OnGetAvailableBombLaunchTemplatesModifications;
-        public event EventHandlerBombDropTemplates OnGetGetAvailableDeviceSideDropTemplates;
+        public event EventHandlerDirection OnGetBombTemplateDirection;
         public event EventHandlerBarrelRollTemplates OnGetAvailableBarrelRollTemplates;
         public event EventHandlerDecloakTemplates OnGetAvailableDecloakTemplates;
         public event EventHandlerBoostTemplates OnGetAvailableBoostTemplates;
@@ -173,6 +173,7 @@ namespace Ship
         public event EventHandlerModifyDice OnTryDiceResultModification;
         public event EventHandlerTrySelectDie OnTrySelectDie;
 
+        public event EventHandler BeforeBombWillBeDropped;
         public event EventHandler OnBombWillBeDropped;
         public event EventHandler OnBombWasDropped;
         public event EventHandler OnBombWasLaunched;
@@ -833,17 +834,9 @@ namespace Ship
             return availableTemplates;
         }
 
-        public List<ManeuverTemplate> GetAvailableDeviceSideDropTemplates(GenericUpgrade upgrade)
+        public void CallOnGetBombTemplateDirection(ref Direction direction)
         {
-            List<ManeuverTemplate> availableTemplates = new List<ManeuverTemplate>();
-            OnGetGetAvailableDeviceSideDropTemplates?.Invoke(availableTemplates, upgrade);
-            if(availableTemplates.Count > 0)
-            {
-                OnGetAvailableBombDropTemplatesNoConditions?.Invoke(availableTemplates, upgrade);
-                OnGetAvailableBombDropTemplatesTwoConditions?.Invoke(availableTemplates, upgrade);
-                OnGetAvailableBombDropTemplatesOneCondition?.Invoke(availableTemplates, upgrade);
-            }
-            return availableTemplates;
+            OnGetBombTemplateDirection?.Invoke(ref direction);
         }
 
         public List<ManeuverTemplate> GetAvailableBarrelRollTemplates()
@@ -996,6 +989,13 @@ namespace Ship
 				"You may perform a bonus attack",
 				this
 			);
+        }
+
+        public void CallBeforeDeviceWillBeDropped(Action callback)
+        {
+            BeforeBombWillBeDropped?.Invoke();
+
+            Triggers.ResolveTriggers(TriggerTypes.BeforeBombWillBeDropped, callback);
         }
 
         public void CallDeviceWillBeDropped(Action callback)

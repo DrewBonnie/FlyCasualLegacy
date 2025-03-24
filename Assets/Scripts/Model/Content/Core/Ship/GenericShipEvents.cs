@@ -21,6 +21,7 @@ namespace Ship
         public delegate void EventHandlerBool(ref bool data);
         public delegate void EventHandlerBoolDirection(ref bool data, Direction direction);
         public delegate void EventHandlerAction(GenericAction action);
+        public delegate void EventHandlerDirection(ref Direction direction);
         public delegate void EventHandlerActionRef(ref GenericAction action);
         public delegate void EventHandlerActionColor(GenericAction action, ref ActionColor color);
         public delegate void EventHandlerActionBool(GenericAction action, ref bool data);

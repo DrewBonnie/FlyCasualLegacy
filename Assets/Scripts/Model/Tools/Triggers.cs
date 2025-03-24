@@ -113,6 +113,7 @@ public enum TriggerTypes
     OnSystemsAbilityActivation,
     OnForceTokensAreSpent,
 
+    BeforeBombWillBeDropped,
     OnBombWillBeDropped,
     OnBombWasDropped,
     OnBombWasLaunched,

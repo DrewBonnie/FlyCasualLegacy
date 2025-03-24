@@ -139,7 +139,17 @@ namespace SubPhases
 
         private void ShowRemoteAndDropTemplate(ManeuverTemplate bombDropTemplate)
         {
-            bombDropTemplate.ApplyTemplate(Selection.ThisShip, Selection.ThisShip.GetBack(), Direction.Bottom);
+            Direction direction = Direction.Bottom;
+            Selection.ThisShip.CallOnGetBombTemplateDirection(ref direction);
+
+            Vector3 position = direction switch
+            {
+                Direction.Left => Selection.ThisShip.GetLeft(),
+                Direction.Right => Selection.ThisShip.GetRight(),
+                _ => Selection.ThisShip.GetBack(),
+            };
+
+            bombDropTemplate.ApplyTemplate(Selection.ThisShip, position, direction);
 
             Vector3 bombPosition = bombDropTemplate.GetFinalPosition();
             Quaternion bombRotation = bombDropTemplate.GetFinalRotation();
@@ -197,7 +207,17 @@ namespace SubPhases
         {
             GenericBomb bomb = BombsManager.CurrentDevice as GenericBomb;
 
-            bombDropTemplate.ApplyTemplate(Selection.ThisShip, Selection.ThisShip.GetBack(), Direction.Bottom);
+            Direction direction = Direction.Bottom;
+            Selection.ThisShip.CallOnGetBombTemplateDirection(ref direction);
+
+            Vector3 position = direction switch
+            {
+                Direction.Left => Selection.ThisShip.GetLeft(),
+                Direction.Right => Selection.ThisShip.GetRight(),
+                _ => Selection.ThisShip.GetBack(),
+            };
+
+            bombDropTemplate.ApplyTemplate(Selection.ThisShip, position, direction);
 
             Vector3 bombPosition = bombDropTemplate.GetFinalPosition();
             Quaternion bombRotation = bombDropTemplate.GetFinalRotation();
