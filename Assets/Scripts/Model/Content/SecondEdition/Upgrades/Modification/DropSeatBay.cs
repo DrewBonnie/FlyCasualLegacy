@@ -107,13 +107,6 @@ namespace Abilities.SecondEdition
             selectedDirection = Direction.Bottom;
         }
 
-        private void InitialDropSeatBayTemplate(List<ManeuverTemplate> availableTemplates, GenericUpgrade upgrade)
-        {
-            if (upgrade.UpgradeInfo.SubType != UpgradeSubType.Remote) return;
-
-            availableTemplates.Add(new ManeuverTemplate(ManeuverBearing.Straight, ManeuverDirection.Forward, ManeuverSpeed.Speed1));
-        }
-
         private void DropSeatBayTemplate(List<ManeuverTemplate> availableTemplates, GenericUpgrade upgrade)
         {
             if (upgrade.UpgradeInfo.SubType != UpgradeSubType.Remote) return;
