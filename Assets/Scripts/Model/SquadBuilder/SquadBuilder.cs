@@ -96,7 +96,8 @@ namespace SquadBuilderNS
                     {
                         try
                         {
-                            SquadLists[Tools.IntToPlayer(i + 1)].SaveSquadronToFile("Autosave (Player " + (i + 1) + ")");
+                            // Autosaving feature, comment out here to remove
+                            SquadLists[Tools.IntToPlayer(i + 1)].SaveSquadronToFile("Autosave " + (i + 1));
                         }
                         catch (Exception)
                         {

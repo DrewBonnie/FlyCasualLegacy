@@ -57,7 +57,10 @@ namespace SquadBuilderNS
 
             if (filePaths.Count != 0)
             {
-                int randomFileIndex = UnityEngine.Random.Range(0, filePaths.Count);
+                // random index here - change to get exact index
+                // int randomFileIndex = UnityEngine.Random.Range(0, filePaths.Count);
+                
+                int randomFileIndex = 0; // first file is "random" squad
 
                 string content = File.ReadAllText(filePaths[randomFileIndex]);
                 JSONObject squadJson = new JSONObject(content);

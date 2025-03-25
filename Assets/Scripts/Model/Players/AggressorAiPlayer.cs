@@ -17,9 +17,9 @@ namespace Players
         {
             Name = "Aggressor AI";
 
-            NickName = "Aggressor";
-            Title = "Assassin Droid";
-            Avatar = "UpgradesList.SecondEdition.IG88D";
+            NickName = "Chat GPT";
+            Title = "Stinky AI";
+            Avatar = "UpgradesList.SecondEdition.K2SO";
         }
 
         public override void AssignManeuversStart()
