@@ -48,7 +48,7 @@ public static class Options
         ManeuverSpeed = PlayerPrefs.GetFloat("Maneuver Speed V2", 0.25f);
         Avatar = PlayerPrefs.GetString("AvatarV2", Options.DefaultAvatar);
         NickName = PlayerPrefs.GetString("NickName", "Unknown Pilot");
-        Title = PlayerPrefs.GetString("Title", "Test Pilot");
+        Title = PlayerPrefs.GetString("Title", "GOAT");   // change title here
         DontShowAiInfo = PlayerPrefs.GetInt("DontShowAiInfo", 0) == 1;
         AiType = PlayerPrefs.GetString("AiType", "AI: Aggressor");
         Edition = "SecondEdition";
