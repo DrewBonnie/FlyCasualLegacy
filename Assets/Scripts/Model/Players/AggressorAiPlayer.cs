@@ -19,19 +19,18 @@ namespace Players
 
             // random name and title feature
             List<string> nicknames = new List<string>();
-            nicknames.add("DeepSeek");
-            nicknames.add("Chat GPT");
-            nicknames.add("Stockfish");
+            nicknames.Add("DeepSeek");
+            nicknames.Add("Chat GPT");
+            nicknames.Add("Stockfish");
 
             List<string> titles = new List<string>();
-            titles.add("Stinky AI");
-            titles.add("Emerald Edger");
-            titles.add("The Overrated");
-            titles.add("Wannabe Albert");
+            titles.Add("Stinky AI");
+            titles.Add("Emerald Edger");
+            titles.Add("The Overrated");
+            titles.Add("Wannabe Albert");
 
-            Random random = new Random();
-            int randomNameIndex = random.Next(0, nicknames.Count);
-            int randomTitleIndex = random.Next(0, titles.Count);
+            int randomNameIndex = UnityEngine.Random.Range(0, nicknames.Count);
+            int randomTitleIndex = UnityEngine.Random.Range(0, titles.Count);
 
             NickName = nicknames[randomNameIndex];
             Title = titles[randomTitleIndex];
